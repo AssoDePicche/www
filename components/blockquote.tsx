@@ -1,18 +1,16 @@
-import { FC } from "react";
-
 interface Properties {
   author: string;
   cite?: string;
   quote: string;
 }
 
-const Component: FC<Properties> = (properties: Properties) => {
+export default function Component(properties: Properties) {
   return (
-    <blockquote cite={properties?.cite}>
-      <p className="italic">&quot;{properties.quote}&quot;</p>
-      <footer>&mdash; {properties.author}</footer>
+    <blockquote cite={properties?.cite} className="leading-8 text-lg text-zinc-400">
+      <p className="italic text-justify">&quot;{properties.quote}&quot;</p>
+      <footer>
+        <p>&mdash; {properties.author}</p>
+      </footer>
     </blockquote>
   );
-};
-
-export default Component;
+}

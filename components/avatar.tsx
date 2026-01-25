@@ -1,10 +1,8 @@
 import Image from "next/image";
 
-import { FC } from "react";
-
 import { AspectRatio } from "@shadcn/components/ui/aspect-ratio";
 
-const Component: FC = () => {
+export default function Component() {
   return (
     <div className="w-full max-w-[12rem]">
       <AspectRatio ratio={1 / 1} className="bg-muted rounded-lg">
@@ -19,6 +17,4 @@ const Component: FC = () => {
       </AspectRatio>
     </div>
   );
-};
-
-export default Component;
+}
