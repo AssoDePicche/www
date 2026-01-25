@@ -52,7 +52,7 @@ export default function RootLayout(properties: Properties) {
             <Footer/>
             <Image
               alt="Background"
-              className="hidden sm:inline absolute left-1/2 top-0 z-0 -translate-x-1/2 object-cover w-full"
+              className="hidden sm:inline absolute left-1/2 top-0 -z-1 -translate-x-1/2 object-cover w-full"
               priority
               role="presentation"
               src={Background}
