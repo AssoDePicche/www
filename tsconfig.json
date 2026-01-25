@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@components/*": ["./components/*"],
+      "@shadcn/*": ["./shadcn/*"]
     }
   },
   "include": [
