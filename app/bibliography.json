@@ -1,0 +1,39 @@
+[
+  {
+    "authors": ["SANTOS, G. F. A.", "RODRIGUES, S. P.", "BORTOLETTO, R. C."],
+    "href": "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9481",
+    "publisher": "XIV Congresso de Iniciação Científica e Tecnológica do IFSP (CONICT)",
+    "title": "Desenvolvimento de um sistema para a análise fundamentalista das ações da Bolsa de Valores do Brasil",
+    "year": 2023
+  },
+  {
+    "authors": ["BRANDÃO, A.", "RODRIGUES, S. P.", "BORTOLETTO, R. C."],
+    "href": "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9759",
+    "publisher": "XIV Congresso de Iniciação Científica e Tecnológica do IFSP (CONICT)",
+    "title": "Aplicação de Aprendizado de Máquina em Redes Ópticas Elásticas: Uma Análise da Evolução e Eficácia na Redução da Probabilidade de Bloqueio",
+    "year": 2023
+  },
+  {
+    "authors": ["RODRIGUES, S. P.", "BORTOLETTO, R. C."],
+    "href": "http://bt.fatecsp.br/media/bulletins/bt58v2.pdf",
+    "page": 83,
+    "publisher": "Boletim Técnico da FATEC-SP, 58 (2)",
+    "title": "O Impacto da Fragmentação de Espectro em Redes Ópticas Elásticas",
+    "year": 2024
+  },
+  {
+    "authors": ["RODRIGUES, S. P.", "SOUSA, G. V.", "BORTOLETTO, R. C."],
+    "href": "https://congressos.ifsp.edu.br/conict/article/view/1040",
+    "publisher": "XV Congresso de Iniciação Científica e Tecnológica do IFSP (CONICT)",
+    "title": "Rede Neural Artificial como agente em Redes Ópticas Elásticas",
+    "year": 2024
+  },
+  {
+    "authors": ["RODRIGUES, S. P.", "BORTOLETTO, R. C."],
+    "href": "http://bt.fatecsp.br/media/bulletins/bt60v2.pdf",
+    "page": 83,
+    "publisher": "Boletim Técnico da FATEC-SP, 60 (2)",
+    "title": "Algoritmos para Medição de Fragmentação Espectral em Redes Ópticas Elásticas",
+    "year": 2025
+  }
+]
