@@ -15,7 +15,7 @@ interface Properties {
 
 export const LinkTree: FC<Properties> = (properties: Properties) => {
   return (
-    <div className="flex gap-4 text-base font-medium flex-wrap">
+    <div className="flex gap-4 text-base font-medium flex-wrap justify-center">
       { properties.items.map((item, index) => (
         <Button href={item.href} key={index}>{item.name}</Button>
       )) }
