@@ -21,6 +21,7 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@images/*": ["./public/images/*"],
+      "@lib/*": ["./lib/*"],
       "@shadcn/*": ["./shadcn/*"]
     }
   },

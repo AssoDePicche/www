@@ -7,11 +7,12 @@ interface NavItem {
 
 export default function Component() {
   const items: NavItem[] = [
-    { name: "~/", path: "/" },
+    { name: "Contact", path: "/" },
+    { name: "Research", path: "/research" },
   ];
 
   return (
-    <header className="flex items-center justify-between px-4">
+    <header className="px-16 flex items-center justify-center sm:justify-between px-4">
       <nav>
         <ul className="flex items-center gap-2">
           { items.map((item, index) => (
