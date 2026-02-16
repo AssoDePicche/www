@@ -9,6 +9,7 @@ export default function Component() {
   const items: NavItem[] = [
     { name: "Contact", path: "/" },
     { name: "Research", path: "/research" },
+    { name: "Projects", path: "/projects" },
   ];
 
   return (

@@ -13,6 +13,10 @@ export default async function Page() {
         Research.
       </h1>
 
+        <p className="text-lg leading-8 text-zinc-400 text-justify">
+          My research focuses on computational methods for optimization in elastic optical networks. I completed two CNPq-funded research projects. My interests include AI, telecommunications, and simulation models. 
+        </p>
+
       <Bibliography items={items}/>
     </div>
   );
