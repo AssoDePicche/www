@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { LocaleSwitcher } from "./locale";
+
 interface NavItem {
   name: string;
   path: string;
@@ -8,8 +10,9 @@ interface NavItem {
 export default function Component() {
   const items: NavItem[] = [
     { name: "Contact", path: "/" },
+    { name: "GitHub", path: "/github" },
+    //{ name: "Misc", path: "/misc" },
     { name: "Research", path: "/research" },
-    { name: "Projects", path: "/projects" },
   ];
 
   return (
@@ -24,6 +27,7 @@ export default function Component() {
             </li>
           )) }
         </ul>
+        { /*<LocaleSwitcher/> */ }
       </nav>
     </header>
   );

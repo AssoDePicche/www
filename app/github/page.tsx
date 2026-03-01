@@ -28,7 +28,7 @@ export default function Page() {
   return (
     <div className="flex items-center font-sans w-full flex-col justify-center sm:items-start gap-6">
       <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-zinc-50">
-        Projects.
+        GitHub Repos.
       </h1>
       <ul>
       {repositories.map((repository, index) =>  (

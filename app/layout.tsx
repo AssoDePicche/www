@@ -4,14 +4,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Image from "next/image";
 
-import { ThemeProvider } from "next-themes";
-
 import { ReactNode } from "react";
 
 import "./globals.css";
 
 import Footer from "@components/footer";
 import Header from "@components/header";
+import Providers from "@components/providers";
 
 import Background from "@images/gradient.webp";
 
@@ -38,12 +37,7 @@ export default function RootLayout(properties: Properties) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <div className="container max-w-3xl mx-auto min-h-screen flex flex-col px-4 py-5">
             <div className="flex-1">
               <Header/>
@@ -58,7 +52,7 @@ export default function RootLayout(properties: Properties) {
               src={Background}
             />
           </div>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
