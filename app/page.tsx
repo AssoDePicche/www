@@ -1,3 +1,5 @@
+import { Contact } from '@components/Home/Contact';
+
 import { Linktree } from '@components/Home/Linktree';
 
 import { Profile } from '@components/Home/Profile';
@@ -12,6 +14,8 @@ export default function Page() {
       <Research />
 
       <Linktree />
+
+      <Contact />
     </div>
   );
 }

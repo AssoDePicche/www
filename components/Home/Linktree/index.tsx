@@ -10,10 +10,8 @@ import items from '../../../app/linktree.json';
 
 const Button = styled.span`
   align-items: center;
-  border-color: ${Theme.colors.accent};
   border-radius: 9999px;
-  border-style: solid;
-  border-width: 1px;
+  border: 0.4rem solid ${Theme.colors.accent};
   color: ${Theme.colors.font};
   display: flex;
   font-size: 1.4rem;

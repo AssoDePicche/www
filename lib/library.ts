@@ -29,3 +29,7 @@ export async function fetchBook(isbn: string): Promise<Book> {
 
   return await response.json();
 }
+
+export const fetchBookCover = (isbn: string): string => {
+  return `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+};
