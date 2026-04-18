@@ -1,9 +1,5 @@
 import { ThemeProvider } from 'next-themes';
 
-import { NextIntlClientProvider } from 'next-intl';
-
-import { getMessages } from 'next-intl/server';
-
 import { FC, ReactNode } from 'react';
 
 interface Properties {
@@ -11,8 +7,6 @@ interface Properties {
 }
 
 export const Providers: FC<Properties> = async ({ children }) => {
-  const messages = await getMessages();
-
   return (
     <>
       <ThemeProvider
@@ -21,9 +15,7 @@ export const Providers: FC<Properties> = async ({ children }) => {
         enableSystem
         disableTransitionOnChange
       >
-        <NextIntlClientProvider messages={messages}>
-          { children }
-        </NextIntlClientProvider>
+        { children }
       </ThemeProvider>
     </>
   );
