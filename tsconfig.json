@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@components/*": ["./components/*"],
+      "@fonts/*": ["./public/fonts/*"],
       "@images/*": ["./public/images/*"],
       "@lib/*": ["./lib/*"],
       "@shadcn/*": ["./shadcn/*"]

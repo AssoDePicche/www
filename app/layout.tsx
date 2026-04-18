@@ -1,59 +1,20 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { FC, ReactElement, ReactNode } from 'react';
 
-import Image from "next/image";
-
-import { ReactNode } from "react";
-
-import "./globals.css";
-
-import Footer from "@components/footer";
-import Header from "@components/header";
-import Providers from "@components/providers";
-
-import Background from "@images/gradient.webp";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { RootLayout } from '@components/Layout';
 
 export const metadata: Metadata = {
-  title: "AssoDePicche",
-  description: "",
+  title: 'AssoDePicche',
+  description: '',
 };
 
 interface Properties {
   children: ReactNode;
 }
 
-export default function RootLayout(properties: Properties) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers>
-          <div className="container max-w-3xl mx-auto min-h-screen flex flex-col px-4 py-5">
-            <div className="flex-1">
-              <Header/>
-              <main className="min-h-screen font-sans w-full max-w-3xl flex-col py-32 px-16 sm:items-start">{ properties.children }</main>
-            </div>
-            <Footer/>
-            <Image
-              alt="Background"
-              className="hidden sm:inline absolute left-1/2 top-0 -z-1 -translate-x-1/2 object-cover w-full"
-              priority
-              role="presentation"
-              src={Background}
-            />
-          </div>
-        </Providers>
-      </body>
-    </html>
-  );
-}
+const Layout: FC<Properties> = ({ children }): ReactElement => {
+  return <RootLayout>{children}</RootLayout>
+};
+
+export default Layout;
