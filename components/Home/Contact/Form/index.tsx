@@ -8,7 +8,7 @@ import { styled } from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
 
-import { Either } from '@types/Either';
+import { type Either } from './Mailing/Either';
 
 import { sendEmail } from './Mailing';
 

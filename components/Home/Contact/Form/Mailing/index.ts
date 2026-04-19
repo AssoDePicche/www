@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 
-import { Either, left, right } from '@types/Either';
+import { type Either, left, right } from './Either';
 
 const SERVICE_ID: string = 'service_s90agve';
 
