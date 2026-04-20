@@ -15,7 +15,7 @@ import { sendEmail } from './Mailing';
 const Button = styled.button`
   align-items: center;
   background-color: transparent;
-  border: 0.3rem solid ${Theme.colors.accent};
+  border: 0.4rem solid ${Theme.colors.accent};
   border-radius: 9999px;
   color: ${Theme.colors.accent};
   display: flex;
@@ -146,6 +146,7 @@ export const Form = () => {
           <Input placeholder='E-mail' type='from' {...register('from', { required: true })} />
 
           <Select {...register('subject', { required: true })}>
+            <option>Escolha um assunto</option>
             { subjects.map((subject: string, index: number) => (
               <option key={index} value={subject}>{subject}</option>
             ))}
