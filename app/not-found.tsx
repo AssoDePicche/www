@@ -1,21 +1,26 @@
-import Image from "next/image";
+import { styled } from 'styled-components';
 
-import WIP from "@images/wip.gif";
+import { Link, Paragraph, Title } from '@components/Typography';
+
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const LinkWrapper = styled.span`
+  font-size: 1.4rem;
+`;
 
 export default function Page() {
   return (
-    <div>
-      <p className="text-center">Please come back later.</p>
-      <div>
-        <Image
-          className="w-full"
-          src={WIP}
-          alt="WIP"
-          width={100}
-          height={100}
-          priority
-        />
-      </div>
-    </div>
+    <Container>
+      <Title>404</Title>
+      <Paragraph>Ops! Página não encontrada</Paragraph>
+      <Link href="/">
+        <LinkWrapper>Voltar</LinkWrapper>
+      </Link>
+    </Container>
   );
 }

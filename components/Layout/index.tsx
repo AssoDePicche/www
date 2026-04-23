@@ -12,7 +12,10 @@ import { Providers } from './Providers';
 import { GlobalStyles, Theme } from './Theme';
 
 const Container = styled.main`
+  min-height: 90vh;
   padding: 4rem 0;
+  height: 100%;
+  width: 100%;
 
   @media(max-width: ${Theme.breakpoints.sm}) {
     padding: 4rem 2rem;

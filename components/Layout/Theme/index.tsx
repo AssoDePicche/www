@@ -35,23 +35,23 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  html, body {
-    min-height: 100%;
-    min-width: 100%;
-  }
-
   html {
-    background-color: ${Theme.colors.background};
-    color: ${Theme.colors.font};
+    background-color: red;
     font-size: 62.5%;
+    height: 100%;
+    width: 100%;
   }
 
   body {
     align-items: center;
+    background-color: ${Theme.colors.background};
+    color: ${Theme.colors.font};
     display: flex;
     flex-direction: column;
     font-family: ${Theme.fonts.primary};
     font-optical-sizing: auto;
+    min-height: 100%;
     justify-content: center;
+    width: 100%;
   }
 `;
