@@ -10,7 +10,6 @@ const Name = styled.h1`
   font-family: sans-serif;
   font-size: 2.8rem;
   font-weight: 700;
-  text-transform:  uppercase;
 `;
 
 const Headline = styled.h3`

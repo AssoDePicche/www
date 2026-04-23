@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 
 import { Toaster } from '@shadcn/components/ui/sonner';
 
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 import { Providers } from './Providers';
@@ -39,6 +40,7 @@ export const RootLayout: FC<Properties> = ({ children }): ReactElement => {
         <Providers>
           <Header />
           <Container>{children}</Container>
+          <Footer />
           <Toaster />
         </Providers>
       </body>

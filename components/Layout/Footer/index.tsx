@@ -14,23 +14,18 @@ const FooterContainer = styled.span`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  max-width: 72rem;
+  max-width: 86rem;
   margin: 0 auto;
   padding: 1rem 0;
-`;
 
-const PronounsContainer = styled.span`
-  align-items: center;
-  display: flex;
-  gap: 1px;
+  @media(max-width: ${Theme.breakpoints.sm}) {
+    padding: 1rem 2rem;
+  }
 `;
 
 const TimeContainer = styled.time`
-  display: none;
-
-  @media(min-width: ${Theme.breakpoints.sm}) {
-    display: inline;
-  }
+  font-size: 1.4rem;
+  font-weight: bold;
 `;
 
 const LinkContainer = styled.span`
@@ -55,10 +50,7 @@ export const Footer = () => {
     <FooterWrapper>
       <Line />
       <FooterContainer>
-        <PronounsContainer>
-          <TimeContainer dateTime={year}>&copy; {year}</TimeContainer>
-          <span>-Ele/Dele</span>
-        </PronounsContainer>
+        <TimeContainer dateTime={year}>&copy; {year}</TimeContainer>
         <Link href="https://github.com/AssoDePicche">
           <LinkContainer>
             <GithubIcon />
