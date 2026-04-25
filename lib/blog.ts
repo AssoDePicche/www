@@ -2,6 +2,8 @@ import fs from 'fs';
 
 import matter from 'gray-matter';
 
+import path from 'path';
+
 export interface Post {
   abstract: string;
   content: string;
@@ -10,8 +12,10 @@ export interface Post {
   lastModifiedDate: Date;
 }
 
+const DIR = path.join(process.cwd(), 'blog');
+
 const fetchPost = (slug: string): Post => {
-  const filepath = process.cwd() + '/blog/' + slug;
+  const filepath = path.join(DIR, slug);
 
   const fileContents = fs.readFileSync(filepath, 'utf-8');
 
@@ -27,7 +31,11 @@ const fetchPost = (slug: string): Post => {
 };
 
 export const fetchPosts = () => {
-  const slugs = fs.readdirSync(process.cwd() + '/blog');
+  if (!fs.existsSync(DIR)) {
+    return [];
+  }
+
+  const slugs = fs.readdirSync(DIR);
 
   const mapSlugsIntoPosts = (slug: string): Post => fetchPost(slug);
 
