@@ -2,28 +2,10 @@ import { formatDate } from 'date-fns';
 
 import { ptBR } from 'date-fns/locale';
 
-import { bundleMDX } from 'mdx-bundler';
-
-import { getMDXComponent } from 'mdx-bundler/client';
-
-import { BundleMDXOptions } from 'mdx-bundler/dist/types'
-
-import type { CompileOptions as ProcessorOptions } from '@mdx-js/mdx';
-
 import NextLink from 'next/link';
 
 import { FC, ReactNode } from 'react';
 import { MdOutlineArrowOutward as ArrowIcon } from "react-icons/md";
-
-import rehypeCodeTitles from 'rehype-code-titles'
-import rehypeImagePlaceholder from 'rehype-image-placeholder'
-import rehypePrism from 'rehype-prism-plus'
-import remarkGfm from 'remark-gfm'
-import remarkHeadings from 'remark-autolink-headings'
-import remarkSlug from 'remark-slug'
-import remarkSmartypants from '@silvenon/remark-smartypants'
-import remarkTableofContents from 'remark-toc'
-import remarkUnwrapImages from 'remark-unwrap-images'
 
 import { styled } from 'styled-components';
 
@@ -89,38 +71,3 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
     </NextLink>
   );
 };
-
-interface MdxContentProps {
-  code: string;
-}
-
-export const fetchMd = async (path: string) => {
-  const options = {
-    mdxOptions(options: ProcessorOptions) {
-      options.remarkPlugins = [
-        ...(options.remarkPlugins ?? []),
-        remarkGfm,
-        remarkHeadings,
-        remarkSlug,
-        remarkSmartypants,
-        [remarkTableofContents, { tight: true }],
-        remarkUnwrapImages,
-      ]
-      options.rehypePlugins = [
-        ...(options.rehypePlugins ?? []),
-        rehypeCodeTitles,
-        rehypePrism,
-        [rehypeImagePlaceholder, { dir: 'public' }],
-      ]
-      return options
-    },
-  };
-
-  return  await bundleMDX({ file: path, ...options });
-};
-
-export const MdxContent: FC<MdxContentProps> = ({ code }): ReactNode => {
-  const Component = getMDXComponent(code);
-
-  return <Component />
-}

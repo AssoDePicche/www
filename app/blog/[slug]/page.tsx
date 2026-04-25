@@ -1,8 +1,8 @@
-import { ReactNode, useMemo } from 'react';
-
-import { fetchMd, MdxContent } from '@components/Blog/Post';
+import { MdxContent } from '@components/Blog/MdxContent';
 
 import { fetchPost, fetchPosts, type Post } from '@lib/blog';
+
+import { fetchMd } from '@lib/mdx';
 
 export async function generateStaticParams() {
   const posts: Post[] = fetchPosts();
