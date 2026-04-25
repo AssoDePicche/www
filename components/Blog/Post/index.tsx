@@ -8,7 +8,7 @@ import { getMDXComponent } from 'mdx-bundler/client';
 
 import { BundleMDXOptions } from 'mdx-bundler/dist/types'
 
-import type {ProcessorOptions} from '@mdx-js/esbuild/lib'
+import type { CompileOptions as ProcessorOptions } from '@mdx-js/mdx';
 
 import NextLink from 'next/link';
 
@@ -26,6 +26,8 @@ import remarkTableofContents from 'remark-toc'
 import remarkUnwrapImages from 'remark-unwrap-images'
 
 import { styled } from 'styled-components';
+
+import { type Post } from '@lib/blog';
 
 import { Theme } from '@components/Layout/Theme';
 
