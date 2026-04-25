@@ -1,6 +1,8 @@
+import path from 'path';
+
 import { MdxContent } from '@components/Blog/MdxContent';
 
-import { fetchPost, fetchPosts, type Post } from '@lib/blog';
+import { fetchPost, fetchPosts, type Post, POSTS_DIR } from '@lib/blog';
 
 import { fetchMd } from '@lib/mdx';
 
@@ -13,11 +15,13 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  const post: Post = fetchPost(slug + '.mdx');
+  const filename = slug + '.mdx';
 
-  const path = process.cwd() + '/blog/' + post.path + '.mdx';
+  const post: Post = fetchPost(filename);
 
-  const markdown = await fetchMd(path);
+  const filePath = path.join(POSTS_DIR, filename);
+
+  const markdown = await fetchMd(filePath);
 
   const { code, frontmatter: metadata } = markdown;
 

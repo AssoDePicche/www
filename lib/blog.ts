@@ -13,10 +13,10 @@ export interface Post {
   title: string;
 }
 
-const DIR = path.join(process.cwd(), 'blog');
+export const POSTS_DIR = path.join(process.cwd(), 'blog');
 
 export const fetchPost = (slug: string): Post => {
-  const filepath = path.join(DIR, slug);
+  const filepath = path.join(POSTS_DIR, slug);
 
   const fileContents = fs.readFileSync(filepath, 'utf-8');
 
@@ -32,7 +32,7 @@ export const fetchPost = (slug: string): Post => {
   } as Post;
 };
 
-export const fetchPostsSlugs = (): string[] => !fs.existsSync(DIR) ? [] : fs.readdirSync(DIR);
+export const fetchPostsSlugs = (): string[] => !fs.existsSync(POSTS_DIR) ? [] : fs.readdirSync(POSTS_DIR);
 
 export const fetchPosts = () => {
   const slugs: string[] = fetchPostsSlugs();
