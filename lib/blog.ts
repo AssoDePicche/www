@@ -8,13 +8,14 @@ export interface Post {
   abstract: string;
   content: string;
   isPublished: boolean;
-  title: string;
   lastModifiedDate: Date;
+  path: string;
+  title: string;
 }
 
 const DIR = path.join(process.cwd(), 'blog');
 
-const fetchPost = (slug: string): Post => {
+export const fetchPost = (slug: string): Post => {
   const filepath = path.join(DIR, slug);
 
   const fileContents = fs.readFileSync(filepath, 'utf-8');
@@ -27,15 +28,14 @@ const fetchPost = (slug: string): Post => {
     ...data,
     content: content,
     lastModifiedDate: new Date(metadata.mtime),
+    path: slug.split('.mdx')[0],
   } as Post;
 };
 
-export const fetchPosts = () => {
-  if (!fs.existsSync(DIR)) {
-    return [];
-  }
+export const fetchPostsSlugs = (): string[] => !fs.existsSync(DIR) ? [] : fs.readdirSync(DIR);
 
-  const slugs = fs.readdirSync(DIR);
+export const fetchPosts = () => {
+  const slugs: string[] = fetchPostsSlugs();
 
   const mapSlugsIntoPosts = (slug: string): Post => fetchPost(slug);
 

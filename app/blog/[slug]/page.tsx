@@ -1,13 +1,29 @@
+import { ReactNode, useMemo } from 'react';
+
+import { fetchMd, MdxContent } from '@components/Blog/Post';
+
+import { fetchPost, fetchPosts, type Post } from '@lib/blog';
+
 export async function generateStaticParams() {
-  return [{ slug: 'teste'}];
+  const posts: Post[] = fetchPosts();
+
+  return posts.map((post: Post) => ({ slug: post.path }));
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
+  const post: Post = fetchPost(slug + '.mdx');
+
+  const path = process.cwd() + '/blog/' + post.path + '.mdx';
+
+  const markdown = await fetchMd(path);
+
+  const { code, frontmatter: metadata } = markdown;
+
   return (
     <div>
-      Post {slug}
+      <MdxContent code={code}/>
     </div>
   );
 }

@@ -1,6 +1,4 @@
-import { formatDate } from 'date-fns';
-
-import { ptBR } from 'date-fns/locale';
+import { Card } from '@components/Blog/Post';
 
 import { Paragraph, Title } from '@components/Typography';
 
@@ -16,18 +14,12 @@ export default function Page() {
       { posts.length === 0 && (
         <div>
           <Paragraph>
-            Ainda não terminei de escrever nada :P
+            Ainda não escrevi nada :P
           </Paragraph>
         </div>
       )}
 
-      {posts.map((post, index) => (
-        <div key={index}>
-          <h3>{post.title}</h3>
-          <p>{post.abstract}</p>
-          <span>{formatDate(post.lastModifiedDate, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}</span>
-        </div>
-      ))}
+      {posts.map((post: Post, index: number) => <Card key={index} post={post} />)}
     </div>
   );
 }
