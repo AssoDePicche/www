@@ -42,7 +42,7 @@ const Button = styled.button`
   }
 `;
 
-export const CodeBlock: FC = ({ children }): ReactNode => {
+export const CodeBlock: FC<Properties> = ({ children }): ReactNode => {
   const preRef = useRef<HTMLPreElement>(null);
 
   const copy = () => {
