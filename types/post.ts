@@ -4,5 +4,6 @@ export interface Post {
   isPublished: boolean;
   lastModifiedDate: Date;
   path: string;
+  tags: string[];
   title: string;
 }

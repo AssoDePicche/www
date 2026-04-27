@@ -55,8 +55,19 @@ const Container = styled.article`
   gap: 1rem;
 `;
 
+const TagsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const Tag = styled.span`
+  color: ${Theme.colors.accent};
+  font-size: 1.2rem;
+  font-style: italic;
+`;
+
 export const Card: FC<Props> = ({ post }): ReactNode => {
-  const { abstract, title, isPublished, lastModifiedDate, path } = post;
+  const { abstract, title, isPublished, lastModifiedDate, path, tags } = post;
 
   return (
       <Container>
@@ -66,6 +77,9 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
       </NextLink>
       <PostDate>{formatDate(lastModifiedDate, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}</PostDate>
       <PostAbstract>{abstract}</PostAbstract>
+      <TagsContainer>
+        { tags.map((tag: string, index: number) => ( <Tag key={index}>#{tag}</Tag> ))}
+      </TagsContainer>
       </div>
       { !isPublished && (<Draft>Rascunho</Draft>) }
       </Container>
