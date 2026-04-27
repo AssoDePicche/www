@@ -35,12 +35,12 @@ export const Image: FC<Properties> = ({ alt, blurDataURL, height, src, width }):
         <NextImage
           alt={alt}
           blurDataURL={blurDataURL}
-          height={height}
+          height={Number(height)}
           loading="lazy"
           onLoadingComplete={() => setLoaded(true)}
           placeholder={blurDataURL ? 'blur' : undefined}
           src={src}
-          width={width}
+          width={Number(width)}
         />
       </Zoom> 
     </Container>

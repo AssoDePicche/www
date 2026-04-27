@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 
 import path from 'path';
 
-import { type Post } from '@types/post';
+import { type Post } from '../types/post';
 
 export { type Post };
 
