@@ -49,7 +49,7 @@ const Draft = styled.div`
   width: fit-content;
 `;
 
-const Container = styled.div`
+const Container = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -59,15 +59,15 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
   const { abstract, title, isPublished, lastModifiedDate, path } = post;
 
   return (
-    <NextLink href={'/blog/' + path}>
       <Container>
         <div>
+        <NextLink href={'/blog/' + path}>
       <PostTitle>{title}<ArrowIcon /></PostTitle>
+      </NextLink>
       <PostDate>{formatDate(lastModifiedDate, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}</PostDate>
       <PostAbstract>{abstract}</PostAbstract>
       </div>
       { !isPublished && (<Draft>Rascunho</Draft>) }
       </Container>
-    </NextLink>
   );
 };

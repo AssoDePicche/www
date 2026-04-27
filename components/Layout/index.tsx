@@ -21,7 +21,7 @@ const Container = styled.main`
     padding: 4rem 2rem;
   }
 
-  @media(min-width: ${Theme.breakpoints.lg}) {
+  @media(min-width: ${Theme.breakpoints.md}) {
     max-width: 86rem;
   }
 `;

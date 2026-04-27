@@ -4,14 +4,9 @@ import matter from 'gray-matter';
 
 import path from 'path';
 
-export interface Post {
-  abstract: string;
-  content: string;
-  isPublished: boolean;
-  lastModifiedDate: Date;
-  path: string;
-  title: string;
-}
+import { type Post } from '@types/post';
+
+export { type Post };
 
 export const POSTS_DIR = path.join(process.cwd(), 'blog');
 

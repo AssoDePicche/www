@@ -23,7 +23,8 @@
       "@fonts/*": ["./public/fonts/*"],
       "@images/*": ["./public/images/*"],
       "@lib/*": ["./lib/*"],
-      "@shadcn/*": ["./shadcn/*"]
+      "@shadcn/*": ["./shadcn/*"],
+      "@types/*": ["./types/*"]
     }
   },
   "include": [

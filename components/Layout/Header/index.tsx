@@ -2,12 +2,7 @@ import { styled } from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
 
-import { Link } from '@components/Typography';
-
-interface Route {
-  link: string;
-  name: string;
-}
+import { Navigation, type Route } from './Navigation';
 
 const HeaderContainer = styled.header`
   align-items: center;
@@ -21,6 +16,7 @@ const HeaderContents = styled.div`
   align-items: center;
   display: flex;
   height: 100%;
+  justify-content: space-between;
   max-width: 86rem;
   width: 100%;
 
@@ -29,15 +25,11 @@ const HeaderContents = styled.div`
   }
 `;
 
-const RoutesContainer = styled.ul`
-  display: flex;
-  gap: 1.4rem;
-`;
-
-const RouteContainer = styled.li`
+const Logo = styled.span`
+  color: ${Theme.colors.accent};
   font-size: 1.4rem;
-  list-style: none;
-  text-transform: capitalize;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const Header = () => {
@@ -49,13 +41,8 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContents>
-        <RoutesContainer>
-          { routes.map((route: Route, index: number) => (
-            <RouteContainer key={index}>
-              <Link href={route.link}>{route.name}</Link>
-            </RouteContainer>
-          ))}
-        </RoutesContainer>
+        <Logo>www.</Logo>
+        <Navigation routes={routes} />
       </HeaderContents>
     </HeaderContainer>
   );
