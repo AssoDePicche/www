@@ -27,7 +27,7 @@ export default function Page() {
     <div>
       <Title>Blog.</Title>
 
-      <Paragraph>Às vezes eu escrevo, outras vezes torno público.</Paragraph>
+      <Paragraph>Às vezes escrevo, outras vezes publico.</Paragraph>
 
       <Container>
         { posts.length === 0 && ( <EmptyState /> )}
