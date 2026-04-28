@@ -82,6 +82,7 @@ const Textarea = styled.textarea`
   border: 0.3rem solid ${Theme.colors.accent};
   border-radius: 1rem;
   color: ${Theme.colors.font};
+  font-family: ${Theme.fonts.primary};
   font-size: 1.6rem;
   height: 10.9rem;
   padding: 1rem;
