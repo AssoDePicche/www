@@ -1,5 +1,6 @@
 export interface Post {
   abstract: string;
+  background: string;
   content: string;
   isPublished: boolean;
   lastModifiedDate: Date;

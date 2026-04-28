@@ -153,7 +153,7 @@ export const Form = () => {
           </Select>
         </InputContainer>
 
-        <Textarea {...register('body', { required: true })}></Textarea>
+        <Textarea placeholder='Mensagem' {...register('body', { required: true })}></Textarea>
       </Container>
 
       <Button>Enviar</Button>

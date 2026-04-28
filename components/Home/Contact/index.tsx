@@ -7,7 +7,7 @@ export const Contact = () => {
     <div>
       <Title>Contato.</Title>
 
-      <Paragraph>Precisa formalizar um contato?</Paragraph>
+      <Paragraph>Alô, alô marciano! Se quiser entrar em contato por e-mail, preencha o formulário abaixo. Costumo responder durante o horário comercial.</Paragraph>
 
       <Form />
     </div>

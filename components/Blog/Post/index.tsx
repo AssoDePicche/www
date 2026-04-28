@@ -1,7 +1,3 @@
-import { formatDate } from 'date-fns';
-
-import { ptBR } from 'date-fns/locale';
-
 import NextLink from 'next/link';
 
 import { FC, ReactNode } from 'react';
@@ -10,6 +6,8 @@ import { MdOutlineArrowOutward as ArrowIcon } from "react-icons/md";
 import { styled } from 'styled-components';
 
 import { type Post } from '@lib/blog';
+
+import { formatLocalDate } from '@lib/formatters';
 
 import { Theme } from '@components/Layout/Theme';
 
@@ -66,16 +64,38 @@ const Tag = styled.span`
   font-style: italic;
 `;
 
+const Cover = styled.img`
+  height: 128px;
+  object-fit: cover;
+  object-position: center;
+  width: 280px;
+
+  @media(max-width: ${Theme.breakpoints.sm}) {
+    width: 100%;
+  }
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+
+  @media(max-width: ${Theme.breakpoints.sm}) {
+    flex-direction: column;
+  }
+`;
+
 export const Card: FC<Props> = ({ post }): ReactNode => {
-  const { abstract, title, isPublished, lastModifiedDate, path, tags } = post;
+  const { abstract, background, title, isPublished, lastModifiedDate, path, tags } = post;
 
   return (
+      <CardContainer>
+      <Cover src={background} alt=''/>
       <Container>
         <div>
         <NextLink href={'/blog/' + path}>
       <PostTitle>{title}<ArrowIcon /></PostTitle>
       </NextLink>
-      <PostDate>{formatDate(lastModifiedDate, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}</PostDate>
+      <PostDate>{formatLocalDate(lastModifiedDate)}</PostDate>
       <PostAbstract>{abstract}</PostAbstract>
       <TagsContainer>
         { tags.map((tag: string, index: number) => ( <Tag key={index}>#{tag}</Tag> ))}
@@ -83,5 +103,6 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
       </div>
       { !isPublished && (<Draft>Rascunho</Draft>) }
       </Container>
+      </CardContainer>
   );
 };

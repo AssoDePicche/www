@@ -1,6 +1,7 @@
 'use client';
 
 import { getMDXComponent } from 'mdx-bundler/client';
+
 import { FC, useMemo } from 'react';
 
 import { components } from './MDX';

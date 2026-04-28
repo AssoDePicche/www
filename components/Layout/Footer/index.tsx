@@ -24,13 +24,14 @@ const FooterContainer = styled.span`
 `;
 
 const TimeContainer = styled.time`
+  color: ${Theme.colors.accent};
   font-size: 1.4rem;
   font-weight: bold;
 `;
 
 const LinkContainer = styled.span`
   align-items: center;
-  color: ${Theme.colors.font};
+  color: ${Theme.colors.accent};
   display: inline-flex;
   font-size: 1.4rem;
   gap: 1.5px;
