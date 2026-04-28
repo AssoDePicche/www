@@ -12,7 +12,11 @@ interface Properties {
   title: string;
 }
 
-const Container = styled.header`
+interface ContainerProperties {
+  $background: string;
+}
+
+const Container = styled.header<ContainerProperties>`
   align-items: center;
   display: flex;
   height: 128px;
@@ -24,10 +28,10 @@ const Container = styled.header`
   &::before {
     background-image: linear-gradient(
       to right bottom,
-      rgb(0.23, 0.23, 0.23, .65),
-      rgb(0.23, 0.23, 0.23, .65)
+      rgba(23, 23, 23, 0.65),
+      rgba(23, 23, 23, 0.65)
     ),
-    url(${(props) => (props.background)});
+    url(${(props) => (props.$background)});
     background-size: cover;
     background-position: center;
     content: '';
@@ -56,7 +60,7 @@ const Date = styled.time`
 
 export const Header: FC<Properties> = ({ background, lastModifiedDate, title }): ReactNode => {
   return (
-    <Container background={background}>
+    <Container $background={background}>
       <div style={{ position: 'absolute' }}>
         <Title>{title}</Title>
         <Date>Última atualização em {formatLocalDate(lastModifiedDate)}</Date>
