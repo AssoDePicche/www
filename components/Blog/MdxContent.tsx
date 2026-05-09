@@ -2,9 +2,11 @@
 
 import { getMDXComponent } from 'mdx-bundler/client';
 
+import type { MDXComponents } from 'mdx/types';
+
 import { FC, useMemo } from 'react';
 
-import { components } from './MDX';
+import { useMDXComponents } from './MDX';
 
 interface MdxContentProps {
   code: string;
@@ -12,6 +14,8 @@ interface MdxContentProps {
 
 export const MdxContent: FC<MdxContentProps> = ({ code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code]);
+
+  const components: MDXComponents = useMDXComponents();
 
   return <Component components={components} />;
 };

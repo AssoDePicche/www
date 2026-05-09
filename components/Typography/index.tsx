@@ -6,15 +6,24 @@ import { FC, ReactNode } from 'react';
 
 import { Theme } from '@components/Layout/Theme';
 
+export const ListItem = styled.li`
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  list-style: none;
+  text-decoration: none;
+`;
+
 export const Paragraph = styled.p`
-  font-size: 1.6rem;
+  font-size: 2rem;
+  font-weight: 300;
   line-height: 1.5;
   margin-bottom: 1.4rem;
   text-align: justify;
 `;
 
 export const Title = styled.h1`
-  font-size: 3.0rem;
+  font-size: 2.8rem;
   font-weight: bold;
   letter-spacing: -0.025rem;
   line-height: 2.5;

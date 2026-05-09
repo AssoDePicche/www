@@ -18,6 +18,7 @@ export const Theme = {
     accent: RusticCharm.SILVER,
     background: RusticCharm.CARBON_BLACK,
     font: RusticCharm.FLORAL_WHITE,
+    outline: RusticCharm.CHARCOAL_BROWN,
   },
   fonts: {
     primary: 'Geist',
