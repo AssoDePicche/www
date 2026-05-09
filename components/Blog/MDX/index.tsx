@@ -6,9 +6,8 @@ import { Image } from './Image';
 
 import { ListItem, Paragraph, Title } from '../../Typography';
 
-export const useMDXComponents = (components: MDXComponents): MDXComponents => {
+export const useMDXComponents = (): MDXComponents => {
   return {
-    ...components,
     h1: Title,
     img: Image,
     li: ListItem,
