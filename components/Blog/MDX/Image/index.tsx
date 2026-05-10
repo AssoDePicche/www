@@ -14,6 +14,7 @@ interface Properties {
 
 const Container = styled.div`
   overflow: hidde;
+  position: relative;
 `;
 
 const Animation = keyframes`

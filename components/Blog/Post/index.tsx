@@ -1,6 +1,9 @@
+'use client';
+
 import NextLink from 'next/link';
 
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
+
 import { MdOutlineArrowOutward as ArrowIcon } from "react-icons/md";
 
 import { styled } from 'styled-components';
@@ -10,6 +13,8 @@ import { type Post } from '@lib/blog';
 import { formatLocalDate } from '@lib/formatters';
 
 import { Theme } from '@components/Layout/Theme';
+
+import { Image } from '../Image';
 
 interface Props {
   post: Post;
@@ -89,7 +94,7 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
 
   return (
       <CardContainer>
-      <Cover src={background} alt=''/>
+      <Image alt='' src={background} />
       <Container>
         <div>
         <NextLink href={'/blog/' + path}>
