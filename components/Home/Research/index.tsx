@@ -32,9 +32,9 @@ const Publication = ({ item }: { item: Item}) => {
 
 const PublicationWrapper = styled.li`
   color: ${Theme.colors.font};
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin-bottom: 4px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.5;
   text-align: justify;
 `;
@@ -42,7 +42,7 @@ const PublicationWrapper = styled.li`
 const ListWrapper = styled.ol`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
   list-style: none;
 `;
 

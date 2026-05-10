@@ -25,11 +25,6 @@ interface Properties {
 export const Image: FC<Properties> = ({ alt, src }): ReactNode => {
   const [loaded, setLoaded] = useState(false);
 
-  const nextImageStyle = {
-    objectFit: 'cover',
-    objectPosition: 'center',
-  };
-
   return (
     <Container>
       { !loaded && <div>Carregando...</div> }
@@ -40,7 +35,10 @@ export const Image: FC<Properties> = ({ alt, src }): ReactNode => {
         onLoad={() => setLoaded(true)}
         quality={100}
         src={src}
-        style={nextImageStyle}
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
       />
     </Container>
   );
