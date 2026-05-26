@@ -37,7 +37,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background-color: red;
+    background-color: ${Theme.colors.background};
     font-size: 62.5%;
     height: 100%;
     width: 100%;

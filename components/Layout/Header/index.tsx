@@ -25,7 +25,7 @@ const HeaderContents = styled.div`
   }
 `;
 
-const Logo = styled.span`
+const Logo = styled.a`
   color: ${Theme.colors.accent};
   font-size: 1.4rem;
   font-weight: bold;
@@ -41,7 +41,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContents>
-        <Logo>www.</Logo>
+        <Logo href="/">www.</Logo>
         <Navigation routes={routes} />
       </HeaderContents>
     </HeaderContainer>
