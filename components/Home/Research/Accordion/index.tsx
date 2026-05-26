@@ -24,7 +24,6 @@ const Title = styled.summary`
 `;
 
 interface Properties {
-  content: string;
   title: string;
 }
 
