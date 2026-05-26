@@ -1,21 +1,19 @@
 import { ThemeProvider } from 'next-themes';
 
-import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren, ReactNode } from 'react';
 
-interface Properties {
-  children: ReactNode;
-}
+import StyledComponentsRegistry from '@lib/registry';
 
-export const Providers: FC<Properties> = async ({ children }) => {
+export const Providers: FC<PropsWithChildren> = ({ children }): ReactNode => {
   return (
     <>
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
-        enableSystem
         disableTransitionOnChange
+        enableSystem
       >
-        { children }
+        <StyledComponentsRegistry>{ children }</StyledComponentsRegistry>
       </ThemeProvider>
     </>
   );
