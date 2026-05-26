@@ -6,6 +6,8 @@ import { Link, Paragraph, Title } from '@components/Typography';
 
 import { FC, ReactNode } from 'react';
 
+import { Accordion } from './Accordion';
+
 import items from '../../../app/bibliography.json';
 
 export interface Item {
@@ -52,15 +54,18 @@ export const Research = () => {
     <div>
       <Title>Pesquisa.</Title>
 
-      <Paragraph>Minha pesquisa se concentra em métodos computacionais para otimização de recursos em redes ópticas elásticas. eu completei duas iniciações científicas como bolsista CNPq e no momento desenvolvo meu terceiro projeto como bolsista PIBIFSP. Minhas linhas de pesquisa incluem aprendizado de máquina, telecomunicações e modelos de simulação.</Paragraph>
+      <Paragraph>Minha pesquisa se concentra em métodos computacionais para otimização de recursos em redes ópticas elásticas. Completei duas iniciações científicas como bolsista CNPq e no momento desenvolvo meu terceiro projeto como bolsista PIBIFSP. Minhas linhas de pesquisa incluem aprendizado de máquina, telecomunicações e modelos de simulação.</Paragraph>
 
-      <ListWrapper>
+      <Accordion title={'Produção Científica'}>
+        <ListWrapper>
       { items.map((item: Item, index: number) => (
         <PublicationWrapper key={index}>
           <Publication item={item} />
         </PublicationWrapper>
       ))}
       </ListWrapper>
+
+      </Accordion>
     </div>
   );
 };
