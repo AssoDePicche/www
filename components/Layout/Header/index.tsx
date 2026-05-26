@@ -1,4 +1,8 @@
-import { styled } from 'styled-components';
+'use client';
+
+import Link from 'next/link';
+
+import styled from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
 
@@ -25,7 +29,7 @@ const HeaderContents = styled.div`
   }
 `;
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   color: ${Theme.colors.accent};
   font-size: 1.4rem;
   font-weight: bold;

@@ -1,8 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 
 import { FC, ReactNode } from 'react';
 
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
 
@@ -26,7 +28,7 @@ const Item = styled.li`
   text-transform: capitalize;
 `;
 
-const LinkWrapper = styled.span`
+const LinkWrapper = styled(Link)`
   color: ${Theme.colors.accent};
 `;
 
@@ -35,9 +37,7 @@ export const Navigation: FC<Properties> = ({ routes }): ReactNode => {
     <List>
       { routes.map((route: Route, index: number) => (
         <Item key={index}>
-          <Link href={route.link}>
-            <LinkWrapper>{route.name}</LinkWrapper>
-          </Link>
+          <LinkWrapper href={route.link}>{route.name}</LinkWrapper>
         </Item>
       ))}
     </List>
