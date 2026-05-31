@@ -4,16 +4,6 @@ import { FC, PropsWithChildren, ReactNode } from 'react';
 
 import StyledComponentsRegistry from '@lib/registry';
 
-const compose = (providers: FC<PropsWitChildren>[]): ReactNode => providers.reduce((Previous, Current) => ({ children }: PropsWithChildren) => {
-  if (!Previous) return <Current>{children}</Current>;
-
-  return (
-    <Previous>
-      <Current>{children}</Current>
-    </Previous>
-  );
-});
-
 const Theme: FC<PropsWithChildren> = ({ children }): ReactNode => {
   return (
     <ThemeProvider
@@ -27,6 +17,12 @@ const Theme: FC<PropsWithChildren> = ({ children }): ReactNode => {
   );
 };
 
-export const Providers: ReactNode = compose([
-  Theme,
-]);
+export const Providers: FC<PropsWithChildren> = ({ children }): ReactNode => {
+  const components = [
+    Theme,
+  ];
+
+  return components.reduceRight((previousChildren, Component) => {
+    return <Component>{previousChildren}</Component>;
+  }, children);
+};
