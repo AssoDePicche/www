@@ -1,6 +1,20 @@
 [
   {
     "authors": ["SANTOS, G. F. A.", "RODRIGUES, S. P.", "BORTOLETTO, R. C."],
+    "href": "https://bt.fatecsp.br/media/bulletins/bt56v1.pdf",
+    "publisher": "Boletim Técnico da FATEC-SP, 56 (1), 64",
+    "title": "Desenvolvimento de um Sistema para Análise de Sentimentos das Ações da Bolsa de Valores do Brasil",
+    "year": 2023
+  },
+  {
+    "authors": ["BRANDÃO, A.", "RODRIGUES, S. P.", "WALDMAN, Helio", "BORTOLETTO, R. C."],
+    "href": "https://bt.fatecsp.br/media/bulletins/bt56v1.pdf",
+    "publisher": "Boletim Técnico da FATEC-SP, 56 (1), 67",
+    "title": "O Aprendizado de Máquina e a Alocação de Rota e Espectro em Redes Ópticas Elásticas",
+    "year": 2023
+  },
+  {
+    "authors": ["SANTOS, G. F. A.", "RODRIGUES, S. P.", "BORTOLETTO, R. C."],
     "href": "https://ocs.ifsp.edu.br/conict/xivconict/paper/view/9481",
     "publisher": "XIV Congresso de Iniciação Científica e Tecnológica do IFSP (CONICT)",
     "title": "Desenvolvimento de um sistema para a análise fundamentalista das ações da Bolsa de Valores do Brasil",
@@ -17,7 +31,7 @@
     "authors": ["RODRIGUES, S. P.", "BORTOLETTO, R. C."],
     "href": "http://bt.fatecsp.br/media/bulletins/bt58v2.pdf",
     "page": 83,
-    "publisher": "Boletim Técnico da FATEC-SP, 58 (2)",
+    "publisher": "Boletim Técnico da FATEC-SP, 58 (2), 83",
     "title": "O Impacto da Fragmentação de Espectro em Redes Ópticas Elásticas",
     "year": 2024
   },
@@ -32,7 +46,7 @@
     "authors": ["RODRIGUES, S. P.", "BORTOLETTO, R. C."],
     "href": "http://bt.fatecsp.br/media/bulletins/bt60v2.pdf",
     "page": 83,
-    "publisher": "Boletim Técnico da FATEC-SP, 60 (2)",
+    "publisher": "Boletim Técnico da FATEC-SP, 69 (2), 83",
     "title": "Algoritmos para Medição de Fragmentação Espectral em Redes Ópticas Elásticas",
     "year": 2025
   }
