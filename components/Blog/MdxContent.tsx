@@ -8,6 +8,10 @@ import { FC, useMemo } from 'react';
 
 import { useMDXComponents } from './MDX';
 
+if (typeof window !== 'undefined' && !window.process) {
+  (window as any).process = { env: { NODE_ENV: process.env.NODE_ENV } };
+}
+
 interface MdxContentProps {
   code: string;
 }
