@@ -1,8 +1,12 @@
+'use client';
+
 import { ThemeProvider } from 'next-themes';
 
 import { FC, PropsWithChildren, ReactNode } from 'react';
 
 import StyledComponentsRegistry from '@lib/registry';
+
+import { ToastProvider } from '@components/Toast/Context';
 
 const Theme: FC<PropsWithChildren> = ({ children }): ReactNode => {
   return (
@@ -20,6 +24,7 @@ const Theme: FC<PropsWithChildren> = ({ children }): ReactNode => {
 export const Providers: FC<PropsWithChildren> = ({ children }): ReactNode => {
   const components = [
     Theme,
+    ToastProvider,
   ];
 
   return components.reduceRight((previousChildren, Component) => {

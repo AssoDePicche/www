@@ -1,12 +1,16 @@
 'use client';
 
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useCallback, useEffect, useState } from 'react';
 
-import { toast } from 'sonner';
+import { useForm } from 'react-hook-form';
 
 import { styled } from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
+
+import { createToast } from '@components/Toast';
+
+import { useToast } from '@components/Toast/Context';
 
 import { type Either } from './Mailing/Either';
 
@@ -114,26 +118,34 @@ const InputContainer = styled.div`
   gap: 1.2rem;
 `;
 
-interface FormData {
+interface ContactRequest {
   body: string;
   from: string;
   subject: string;
 }
 
 export const Form = () => {
-  const { reset, register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const [isPending, setIsPending] = useState<boolean>(false);
 
-  const onSubmit = async (data: FormData) => {
+  const { reset, register, handleSubmit } = useForm<ContactRequest>();
+
+  const { addToast } = useToast();
+
+  const onSubmit = useCallback(async (data: ContactRequest) => {
+    setIsPending(true);
+
     const either: Either<string, string> = await sendEmail(data.body, data.from, data.subject);
 
     if (either.isLeft()) {
-      toast('Não foi possível enviar o e-mail');
+      addToast(createToast('Não foi possível enviar o e-mail', 'error'));
     } else {
-      toast('E-mail enviado');
+      addToast(createToast('E-mail enviado', 'info'));
 
       reset();
     }
-  };
+
+    setIsPending(false);
+  }, []);
 
   const subjects: string[] = [
     'Pesquisa',
@@ -144,20 +156,20 @@ export const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Container>
         <InputContainer>
-          <Input placeholder='E-mail' type='from' {...register('from', { required: true })} />
+          <Input disabled={isPending} placeholder='E-mail' type='from' {...register('from', { required: true })} />
 
-          <Select {...register('subject', { required: true })}>
-            <option>Escolha um assunto</option>
+          <Select disabled={isPending} {...register('subject', { required: true })}>
+            <option disabled>Escolha um assunto</option>
             { subjects.map((subject: string, index: number) => (
               <option key={index} value={subject}>{subject}</option>
             ))}
           </Select>
         </InputContainer>
 
-        <Textarea placeholder='Mensagem' {...register('body', { required: true })}></Textarea>
+        <Textarea disabled={isPending} placeholder='Mensagem' {...register('body', { required: true })}></Textarea>
       </Container>
 
-      <Button>Enviar</Button>
+      <Button disabled={isPending}>{isPending ? 'Enviando...' : 'Enviar'}</Button>
     </form>
   );
 };

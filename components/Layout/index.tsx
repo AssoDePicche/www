@@ -1,8 +1,8 @@
-import { FC, ReactElement, ReactNode } from 'react';
+import { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { styled } from 'styled-components';
 
-import { Toaster } from '@shadcn/components/ui/sonner';
+import { Toaster } from '../Toast';
 
 import { Footer } from './Footer';
 import { Header } from './Header';
@@ -12,9 +12,9 @@ import { Providers } from './Providers';
 import { GlobalStyles, Theme } from './Theme';
 
 const Container = styled.main`
-  min-height: 90vh;
-  padding: 4rem 0;
+  flex: 1;
   height: 100%;
+  padding: 4rem 0;
   width: 100%;
 
   @media(max-width: ${Theme.breakpoints.sm}) {
@@ -26,11 +26,7 @@ const Container = styled.main`
   }
 `;
 
-interface Properties {
-  children: ReactNode;
-}
-
-export const RootLayout: FC<Properties> = ({ children }): ReactElement => {
+export const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
@@ -43,8 +39,8 @@ export const RootLayout: FC<Properties> = ({ children }): ReactElement => {
         <Providers>
           <Header />
           <Container>{children}</Container>
-          <Footer />
           <Toaster />
+          <Footer />
         </Providers>
       </body>
     </html>

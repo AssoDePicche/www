@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 import NextLink from 'next/link';
 
-import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { Theme } from '@components/Layout/Theme';
 
@@ -29,10 +29,9 @@ export const Title = styled.h1`
   line-height: 2.5;
 `;
 
-interface Properties {
-  children: ReactNode;
+type  Properties = PropsWithChildren<{
   href: string;
-}
+}>;
 
 const Wrapper = styled.span`
   color: ${Theme.colors.font};

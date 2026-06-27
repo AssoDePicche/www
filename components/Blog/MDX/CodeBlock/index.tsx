@@ -1,14 +1,10 @@
-import { FC, ReactNode, useRef } from 'react';
+import { FC, PropsWithChildren, ReactNode, useRef } from 'react';
 
 import { IoCopyOutline as Icon } from 'react-icons/io5';
 
 import { styled } from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
-
-interface Properties {
-  children: ReactNode;
-}
 
 const Container = styled.div`
   position: relative;
@@ -42,7 +38,7 @@ const Button = styled.button`
   }
 `;
 
-export const CodeBlock: FC<Properties> = ({ children }): ReactNode => {
+export const CodeBlock: FC<PropsWithChildren> = ({ children }): ReactNode => {
   const preRef = useRef<HTMLPreElement>(null);
 
   const copy = () => {
