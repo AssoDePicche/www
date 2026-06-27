@@ -12,16 +12,13 @@ import { Theme } from '../Layout/Theme';
 
 const Container = styled.div`
   --_viewport-margin: 2.5vmin;
-  align-items: center;
   display: flex;
   flex-direction: column;
   gap: var(--_viewport-margin);
   inset-block: auto var(--_viewport-margin);
   inset-inline: auto var(--_viewport-margin);
-  justify-content: center;
+  place-items: end;
   position: fixed;
-  padding: 20px;
-  place-items: center;
   width: 100%;
 `;
 
@@ -35,7 +32,9 @@ const ToastComponent = styled.div`
   background-color: ${Theme.colors.background};
   border: 1px solid ${Theme.colors.accent};
   display: flex;
+  gap: 2rem;
   justify-content: space-between;
+  max-width: 360px;
   min-width: 280px;
   padding: 1rem;
   width: 100%;
@@ -57,7 +56,7 @@ const Wrapper: FC<{ onRemove: (id: string) => void, toast: Toast }> = ({ onRemov
     return (
         <ToastComponent key={toast.id}>
             <Message>{toast.message}</Message>
-            <GrFormClose onClick={removeToast} size={24} />
+            <GrFormClose onClick={removeToast} size={36} />
         </ToastComponent>
     );
 };
