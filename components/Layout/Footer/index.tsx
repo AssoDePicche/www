@@ -6,10 +6,6 @@ import { Theme } from '@components/Layout/Theme';
 
 import { Link } from '@components/Typography';
 
-const Line = styled.hr`
-  border-top: 1px solid ${Theme.colors.accent};
-`;
-
 const FooterContainer = styled.span`
   align-items: center;
   display: flex;
@@ -49,7 +45,6 @@ export const Footer = () => {
 
   return (
     <FooterWrapper>
-      <Line />
       <FooterContainer>
         <TimeContainer dateTime={year}>&copy; {year}</TimeContainer>
         <Link href="https://github.com/AssoDePicche">
