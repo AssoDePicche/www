@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, PropsWithChildren, ReactNode, useRef } from 'react';
 
 import { IoCopyOutline as Icon } from 'react-icons/io5';

@@ -2,7 +2,7 @@
 
 import NextLink from 'next/link';
 
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { MdOutlineArrowOutward as ArrowIcon } from "react-icons/md";
 
@@ -69,17 +69,6 @@ const Tag = styled.span`
   font-style: italic;
 `;
 
-const Cover = styled.img`
-  height: 128px;
-  object-fit: cover;
-  object-position: center;
-  width: 280px;
-
-  @media(max-width: ${Theme.breakpoints.sm}) {
-    width: 100%;
-  }
-`;
-
 const CardContainer = styled.div`
   display: flex;
   gap: 2rem;
@@ -94,7 +83,7 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
 
   return (
       <CardContainer>
-      <Image alt='' src={background} />
+      <Image alt={title} src={background} />
       <Container>
         <div>
         <NextLink href={'/blog/' + path}>
