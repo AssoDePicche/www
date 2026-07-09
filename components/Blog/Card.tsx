@@ -43,9 +43,10 @@ interface Properties {
 }
 
 const Card = ({ description, href, cover, title }: Properties) => {
+    const prefix: string = process.env.NODE_ENV === 'production' ? '/www/' : '';
     return (
         <Container>
-            <CoversContainer href={href}>
+            <CoversContainer href={prefix + href}>
                 <Cover src={cover} width="280" />
             </CoversContainer>
             <Title>{title}</Title>
