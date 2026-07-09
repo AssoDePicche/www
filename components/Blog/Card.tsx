@@ -25,10 +25,14 @@ const Cover = styled.img`
 
 const Description = styled.p`
     font-size: ${Theme.fontSize.base};
+    text-align: center;
+    text-transform: capitalize;
 `;
 
 const Title = styled.h3`
     font-size: ${Theme.fontSize.large};
+    text-align: center;
+    text-transform: capitalize;
 `;
 
 interface Properties {
