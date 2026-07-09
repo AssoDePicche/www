@@ -48,7 +48,7 @@ const Card = ({ description, href, cover, title }: Properties) => {
     return (
         <Container>
             <CoversContainer href={prefix + href}>
-                <Cover src={cover} width="280" />
+                <Cover src={prefix + cover} width="280" />
             </CoversContainer>
             <Title>{title}</Title>
             <Description>{description}</Description>
