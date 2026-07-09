@@ -9,7 +9,7 @@ import remarkSlug from 'remark-slug';
 import remarkSmartypants from '@silvenon/remark-smartypants';
 import remarkTableofContents from 'remark-toc';
 import remarkUnwrapImages from 'remark-unwrap-images';
-import { Card } from '@components/Blog/Card';
+import Card from '@components/Blog/Card';
 // Import your existing components hook
 import { useMDXComponents } from '@components/Blog/MDX';
 

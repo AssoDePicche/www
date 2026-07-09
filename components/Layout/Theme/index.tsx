@@ -23,8 +23,16 @@ export const Theme = {
   fonts: {
     primary: 'Geist',
   },
+  fontSize: {
+      small: '14px',
+      base: '16px',
+      large: '20px',
+  },
   palette: {
     rusticCharm: RusticCharm,
+  },
+  spacing: {
+    small: '1rem',
   },
 };
 
