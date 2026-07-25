@@ -59,8 +59,12 @@ const Date = styled.time`
 `;
 
 export const Header: FC<Properties> = ({ background, lastModifiedDate, title }): ReactNode => {
+  const prefix: string = process.env.NODE_ENV.toLowerCase() === 'production' ? '/www' : '';
+
+  const proxy: string = prefix + (background ?? '');
+
   return (
-    <Container $background={background}>
+    <Container $background={proxy}>
       <div style={{ position: 'absolute' }}>
         <Title>{title}</Title>
         <Date>Última atualização em {formatLocalDate(lastModifiedDate)}</Date>
