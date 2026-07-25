@@ -22,6 +22,11 @@ export const Paragraph = styled.p`
   text-align: justify;
 `;
 
+export const Subtitle = styled.h2`
+    font-size: 2.4rem;
+    line-height: 1.5;
+`;
+
 export const Title = styled.h1`
   font-size: 2.8rem;
   font-weight: bold;

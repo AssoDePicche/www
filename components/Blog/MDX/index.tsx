@@ -4,11 +4,12 @@ import { CodeBlock } from './CodeBlock';
 
 import { Image } from './Image';
 
-import { ListItem, Paragraph, Title } from '../../Typography';
+import { ListItem, Paragraph, Subtitle, Title } from '../../Typography';
 
 export const useMDXComponents = (): MDXComponents => {
   return {
     h1: Title,
+    h2: Subtitle,
     img: Image,
     li: ListItem,
     p: Paragraph,
