@@ -13,6 +13,7 @@ const Button = styled.a`
   font-weight: bold;
   height: 4.8rem;
   justify-content: center;
+  margin: ${Theme.spacing.small} 0;
   text-decoration: none;
   transition: all 200ms ease-in-out;
   width: 20rem;
@@ -26,6 +27,7 @@ const Button = styled.a`
   @media(max-width: ${Theme.breakpoints.sm}) {
     font-size: 1.8rem;
     height: 6.4rem;
+    margin: 0 auto;
     width: 32rem;
   }
 `;
