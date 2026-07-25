@@ -2,8 +2,6 @@ import path from 'path';
 
 import { Header } from '@components/Blog/Post/Header';
 
-import { Paragraph } from '@components/Typography';
-
 import { fetchPost, fetchPosts, type Post, POSTS_DIR } from '@lib/blog';
 
 import { fetchMd } from '@lib/mdx';
@@ -28,10 +26,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <div>
       <Header background={post.background} lastModifiedDate={post.lastModifiedDate} title={post.title} />
-      <Paragraph>{post.abstract}</Paragraph>
-      <article>
-        {content}
-      </article>
+      <article>{content}</article>
     </div>
   );
 }
