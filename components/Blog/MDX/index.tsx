@@ -10,6 +10,7 @@ export const useMDXComponents = (): MDXComponents => {
   return {
     h1: Title,
     h2: Subtitle,
+    h3: Subtitle,
     img: Image,
     li: ListItem,
     p: Paragraph,

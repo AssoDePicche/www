@@ -10,7 +10,8 @@ export const ListItem = styled.li`
   font-size: 2rem;
   font-weight: 300;
   line-height: 1.5;
-  list-style: none;
+  list-style: circle;
+  margin-left: 2rem;
   text-decoration: none;
 `;
 
@@ -23,12 +24,12 @@ export const Paragraph = styled.p`
 `;
 
 export const Subtitle = styled.h2`
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     line-height: 1.5;
 `;
 
 export const Title = styled.h1`
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: bold;
   letter-spacing: -0.025rem;
   line-height: 2.5;
