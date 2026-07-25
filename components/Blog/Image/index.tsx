@@ -37,6 +37,10 @@ interface Properties {
 export const Image: FC<Properties> = ({ alt, src }): ReactNode => {
   const [loaded, setLoaded] = useState(false);
 
+  const prefix: string = process.env.NODE_ENV.toLowerCase() === 'production' ? '/www' : '';
+
+  const proxy: string = prefix + (src ?? '');
+
   return (
     <Container>
       { !loaded && <Skeleton /> }
@@ -46,7 +50,7 @@ export const Image: FC<Properties> = ({ alt, src }): ReactNode => {
         loading="lazy"
         onLoad={() => setLoaded(true)}
         quality={100}
-        src={src}
+        src={proxy}
         style={{
           objectFit: 'cover',
           objectPosition: 'center',
