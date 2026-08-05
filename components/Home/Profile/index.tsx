@@ -47,7 +47,7 @@ const ProfileContainer = styled.div`
 `;
 
 export const Profile = () => {
-  const years = differenceInYears(new Date(), new Date(2004, 7, 27));
+  const years = differenceInYears(new Date(), new Date(2004, 6, 27));
 
   return (
     <Container>
@@ -61,7 +61,8 @@ export const Profile = () => {
 
       <div>
         <Title>Sobre.</Title>
-        <Paragraph>Membro do Laboratório de Computação Aplicada (LABCOM3), atua no desenvolvimento de ferramentas de simulação computacional para o estudo de Redes Ópticas Elásticas.</Paragraph>
+
+        <Paragraph>Atuo como membro do Laboratório de Computação Aplicada (LABCOM3) do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (campus Guarulhos) onde me concentro no estudo de aplicações de modelos de inteligência artificial e teoria dos jogos para otimização de algoritmos RMCSA em redes ópticas elásticas.</Paragraph>
       </div>
     </Container>
   );

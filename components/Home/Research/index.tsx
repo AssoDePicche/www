@@ -4,8 +4,6 @@ import { Theme } from '@components/Layout/Theme';
 
 import { Link, Paragraph, Title } from '@components/Typography';
 
-import { FC, ReactNode } from 'react';
-
 import { Accordion } from './Accordion';
 
 import items from '../../../app/bibliography.json';
@@ -54,7 +52,9 @@ export const Research = () => {
     <div>
       <Title>Pesquisa.</Title>
 
-      <Paragraph>Minha pesquisa se concentra em métodos computacionais para otimização de recursos em redes ópticas elásticas. Completei duas iniciações científicas como bolsista CNPq e no momento desenvolvo meu terceiro projeto como bolsista PIBIFSP. Minhas linhas de pesquisa incluem aprendizado de máquina, telecomunicações e modelos de simulação.</Paragraph>
+      <Paragraph>Sob auxílio de programas de fomento à pesquisa (CNPq/IFSP) desenvolvo um conjunto de ferramentas open-source para simulação e análise de algoritmos RMCSA em redes ópticas elásticas (disponível no GitHub) a fim de encontrar meios eficientes de gerenciar recursos espectrais. Minhas linhas de pesquisa incluem aprendizado de máquina, telecomunicações e modelos de simulação.</Paragraph>
+
+      <Paragraph>Clique em "Exibir Produção Científica" para visualizar algumas publicações selecionadas.</Paragraph>
 
       <Accordion title={'Produção Científica'}>
         <ListWrapper>
