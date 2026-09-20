@@ -24,22 +24,12 @@ export const sendEmail = async (body: string, from: string, subject: string): Pr
         title: subject,
     };
 
-    try {
-        const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, options);
-
-        return right(response.text);
-    } catch (error) {
-        const message: string = error instanceof Error ? error.message : String(error);
-
-        return left(message);
-    }
-
-    return emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, options).then(
+    return await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, options).then(
         (response) => {
             return right(response.text);
         },
         (error) => {
-            return left(error);
+            return left((error as Error).message || 'Não foi possível enviar o email');
         },
     );
 };

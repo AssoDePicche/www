@@ -17,7 +17,7 @@ export interface Item {
   year: number;
 }
 
-const Publication = ({ item }: { item: Item}) => {
+const Publication = ({ item }: { item: Item }) => {
   const { authors, href, page, publisher, title, year } = item;
 
   const pageSuffix: string = page ? ', ' + page : '';

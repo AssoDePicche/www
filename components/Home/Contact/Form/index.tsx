@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 
 import { styled } from 'styled-components';
 
+import Button from '@components/common/Button';
+
 import { Theme } from '@components/Layout/Theme';
 
 import { createToast } from '@components/Toast';
@@ -15,31 +17,6 @@ import { useToast } from '@components/Toast/Context';
 import { type Either } from './Mailing/Either';
 
 import { sendEmail } from './Mailing';
-
-const Button = styled.button`
-  align-items: center;
-  background-color: transparent;
-  border: 0.4rem solid ${Theme.colors.accent};
-  border-radius: 9999px;
-  color: ${Theme.colors.accent};
-  display: flex;
-  font-weight: bold;
-  font-size: 1.6rem;
-  gap: 1rem;
-  height: 4.8rem;
-  justify-content: center;
-  width: 16rem;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media(max-width: ${Theme.breakpoints.sm}) {
-    font-size: 1.8rem;
-    height: 6.4rem;
-    width: 100%;
-  }
-`;
 
 const Input = styled.input`
   background-color: transparent;
