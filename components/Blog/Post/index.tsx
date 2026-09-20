@@ -1,5 +1,3 @@
-'use client';
-
 import NextLink from 'next/link';
 
 import { MdOutlineArrowOutward as ArrowIcon } from 'react-icons/md';
@@ -75,12 +73,16 @@ const CardContainer = styled.div`
 export const Card = ({ post }: { post: Post }) => {
   const { abstract, background, title, isPublished, lastModifiedDate, path, tags } = post;
 
+  const URL: string = '/blog/' + path;
+
   return (
       <CardContainer>
+      <NextLink href={URL}>
       <Image alt={title} src={background} />
+      </NextLink>
       <Container>
         <div>
-        <NextLink href={'/blog/' + path}>
+        <NextLink href={URL}>
       <PostTitle>{title}<ArrowIcon /></PostTitle>
       </NextLink>
       <PostDate>{formatLocalDate(lastModifiedDate)}</PostDate>
