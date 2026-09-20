@@ -1,10 +1,10 @@
 'use client';
 
-import { FC, PropsWithChildren, ReactNode, useRef } from 'react';
+import { PropsWithChildren, useRef } from 'react';
 
 import { IoCopyOutline as Icon } from 'react-icons/io5';
 
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
 
@@ -40,7 +40,7 @@ const Button = styled.button`
   }
 `;
 
-export const CodeBlock: FC<PropsWithChildren> = ({ children }): ReactNode => {
+export default function CodeBlock({ children }: PropsWithChildren) {
   const preRef = useRef<HTMLPreElement>(null);
 
   const copy = () => {
@@ -59,4 +59,4 @@ export const CodeBlock: FC<PropsWithChildren> = ({ children }): ReactNode => {
       </Button>
     </Container>
   );
-};
+}

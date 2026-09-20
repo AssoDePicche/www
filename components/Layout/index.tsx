@@ -1,10 +1,11 @@
-import { FC, PropsWithChildren, ReactElement } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { styled } from 'styled-components';
 
 import { Toaster } from '../Toast';
 
 import { Footer } from './Footer';
+
 import { Header } from './Header';
 
 import { Providers } from './Providers';
@@ -26,7 +27,7 @@ const Container = styled.main`
   }
 `;
 
-export const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
+export const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>

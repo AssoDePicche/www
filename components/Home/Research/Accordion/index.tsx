@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, PropsWithChildren, ReactNode, useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 
 import { FaMinus as HideIcon, FaPlus as ShowIcon } from 'react-icons/fa6';
 
@@ -23,11 +23,11 @@ const Title = styled.summary`
   font-weight: bold;
 `;
 
-interface Properties {
+interface Properties extends PropsWithChildren {
   title: string;
 }
 
-export const Accordion: FC<PropsWithChildren<Properties>> = ({ children, title }): ReactNode => {
+export const Accordion = ({ children, title }: Properties) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const toggleState = () => setIsActive(!isActive);

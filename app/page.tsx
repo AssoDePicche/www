@@ -9,17 +9,17 @@ import { Profile } from '@components/Home/Profile';
 import { Research } from '@components/Home/Research';
 
 export default function Page() {
-  return (
-    <div>
-      <Profile />
+    return (
+        <div>
+            <Profile />
 
-      <CV />
+            <CV />
 
-      <Research />
+            <Research />
 
-      <Linktree />
+            <Linktree />
 
-      <Contact />
-    </div>
-  );
+            <Contact />
+        </div>
+    );
 }

@@ -42,7 +42,7 @@ interface Properties {
     title: string;
 }
 
-const Card = ({ description, href, cover, title }: Properties) => {
+export default function Card({ description, href, cover, title }: Properties) {
     const prefix: string = process.env.NODE_ENV.toLowerCase() === 'production' ? '/www' : '';
 
     const proxy: string = prefix + (href ?? '');
@@ -56,6 +56,4 @@ const Card = ({ description, href, cover, title }: Properties) => {
             <Description>{description}</Description>
         </Container>
     );
-};
-
-export default Card;
+}

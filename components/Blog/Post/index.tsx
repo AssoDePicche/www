@@ -2,9 +2,7 @@
 
 import NextLink from 'next/link';
 
-import { FC, ReactNode } from 'react';
-
-import { MdOutlineArrowOutward as ArrowIcon } from "react-icons/md";
+import { MdOutlineArrowOutward as ArrowIcon } from 'react-icons/md';
 
 import { styled } from 'styled-components';
 
@@ -14,11 +12,7 @@ import { formatLocalDate } from '@lib/formatters';
 
 import { Theme } from '@components/Layout/Theme';
 
-import { Image } from '../Image';
-
-interface Props {
-  post: Post;
-}
+import Image from '../Image';
 
 const PostTitle = styled.h3`
   align-items: center;
@@ -78,7 +72,7 @@ const CardContainer = styled.div`
   }
 `;
 
-export const Card: FC<Props> = ({ post }): ReactNode => {
+export const Card = ({ post }: { post: Post }) => {
   const { abstract, background, title, isPublished, lastModifiedDate, path, tags } = post;
 
   return (
@@ -99,4 +93,4 @@ export const Card: FC<Props> = ({ post }): ReactNode => {
       </Container>
       </CardContainer>
   );
-};
+}

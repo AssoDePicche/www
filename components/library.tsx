@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { type Book, fetchBook } from "@lib/library";
+import { type Book, fetchBook } from '@lib/library';
 
 interface Properties {
   books: string[];

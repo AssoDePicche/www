@@ -1,8 +1,8 @@
 import type { MDXComponents } from 'mdx/types';
 
-import { CodeBlock } from './CodeBlock';
+import CodeBlock from './CodeBlock';
 
-import { Image } from './Image';
+import Image from './Image';
 
 import { ListItem, Paragraph, Subtitle, Title } from '../../Typography';
 

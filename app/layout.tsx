@@ -1,20 +1,14 @@
 import type { Metadata } from 'next';
 
-import { FC, ReactElement, ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { RootLayout } from '@components/Layout';
 
 export const metadata: Metadata = {
-  title: 'AssoDePicche',
-  description: '',
+    title: 'AssoDePicche',
+    description: '',
 };
 
-interface Properties {
-  children: ReactNode;
+export default function Layout({ children }: PropsWithChildren) {
+    return <RootLayout>{children}</RootLayout>
 }
-
-const Layout: FC<Properties> = ({ children }): ReactElement => {
-  return <RootLayout>{children}</RootLayout>
-};
-
-export default Layout;

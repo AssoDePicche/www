@@ -1,6 +1,6 @@
 import { differenceInYears } from 'date-fns';
 
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 import { Paragraph, Title } from '@components/Typography';
 

@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 import NextLink from 'next/link';
 
-import { FC, PropsWithChildren, ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { Theme } from '@components/Layout/Theme';
 
@@ -44,7 +44,7 @@ const Wrapper = styled.span`
   font-weight: bold;
 `;
 
-export const Link: FC<Properties> = ({ children, href }): ReactNode => {
+export const Link = ({ children, href }: Properties) => {
   if (href.startsWith('http')) {
     return (
       <NextLink href={href} rel="noopener noreferrer" target="_blank">

@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { GrFormClose } from 'react-icons/gr';
 
@@ -40,7 +40,7 @@ const ToastComponent = styled.div`
   width: 100%;
 `;
 
-const Wrapper: FC<{ onRemove: (id: string) => void, toast: Toast }> = ({ onRemove, toast }): ReactNode => {
+const Wrapper = ({ onRemove, toast }: { onRemove: (id: string) => void, toast: Toast }) => {
     const removeToast = () => onRemove(toast.id);
 
     useEffect(() => {
@@ -61,7 +61,7 @@ const Wrapper: FC<{ onRemove: (id: string) => void, toast: Toast }> = ({ onRemov
     );
 };
 
-export const Toaster: FC = (): ReactNode => {
+export const Toaster = () => {
     const { removeToast, toasts } = useToast();
 
     return (

@@ -2,13 +2,13 @@
 
 import { ThemeProvider } from 'next-themes';
 
-import { FC, PropsWithChildren, ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 import StyledComponentsRegistry from '@lib/registry';
 
 import { ToastProvider } from '@components/Toast/Context';
 
-const Theme: FC<PropsWithChildren> = ({ children }): ReactNode => {
+const Theme = ({ children }: PropsWithChildren) => {
   return (
     <ThemeProvider
       attribute="class"
@@ -21,7 +21,7 @@ const Theme: FC<PropsWithChildren> = ({ children }): ReactNode => {
   );
 };
 
-export const Providers: FC<PropsWithChildren> = ({ children }): ReactNode => {
+export const Providers = ({ children }: PropsWithChildren) => {
   const components = [
     Theme,
     ToastProvider,

@@ -1,5 +1,3 @@
-import { FC, ReactNode } from 'react';
-
 import { styled } from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
@@ -58,7 +56,7 @@ const Date = styled.time`
   font-size: 1.4rem;
 `;
 
-export const Header: FC<Properties> = ({ background, lastModifiedDate, title }): ReactNode => {
+export const Header = ({ background, lastModifiedDate, title }: Properties)  => {
   const prefix: string = process.env.NODE_ENV.toLowerCase() === 'production' ? '/www' : '';
 
   const proxy: string = prefix + (background ?? '');

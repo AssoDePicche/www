@@ -2,7 +2,7 @@
 
 import NextImage from 'next/image';
 
-import { FC, ReactNode, useState } from 'react';
+import { useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -34,7 +34,7 @@ interface Properties {
   src: string;
 }
 
-export const Image: FC<Properties> = ({ alt, src }): ReactNode => {
+export default function Image({ alt, src }: Properties) {
   const [loaded, setLoaded] = useState(false);
 
   const prefix: string = process.env.NODE_ENV.toLowerCase() === 'production' ? '/www' : '';
@@ -60,4 +60,4 @@ export const Image: FC<Properties> = ({ alt, src }): ReactNode => {
       />
     </Container>
   );
-};
+}

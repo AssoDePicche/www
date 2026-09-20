@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 
-import { FC, ReactNode } from 'react';
-
 import styled from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
@@ -11,10 +9,6 @@ import { Theme } from '@components/Layout/Theme';
 export interface Route {
   link: string;
   name: string;
-}
-
-interface Properties {
-  routes: Route[];
 }
 
 const List = styled.ul`
@@ -32,7 +26,7 @@ const LinkWrapper = styled(Link)`
   color: ${Theme.colors.accent};
 `;
 
-export const Navigation: FC<Properties> = ({ routes }): ReactNode => {
+export const Navigation = ({ routes }: { routes: Route[]}) => {
   return (
     <List>
       { routes.map((route: Route, index: number) => (

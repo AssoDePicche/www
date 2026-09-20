@@ -1,17 +1,16 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Button } from "@shadcn/components/ui/button";
+import { Button } from '@shadcn/components/ui/button';
 
 import {
   Item,
   ItemActions,
   ItemContent,
   ItemDescription,
-  ItemMedia,
   ItemTitle,
-} from "@shadcn/components/ui/item";
+} from '@shadcn/components/ui/item';
 
-import { format } from "date-fns";
+import { format } from 'date-fns';
 
 interface Properties {
   name: string;
@@ -21,8 +20,8 @@ interface Properties {
   language: string;
 }
 
-export default function Component(properties: Properties) {
-  const lastUpdate = format(new Date(properties.updatedAt), "dd/MM/yy");
+export default function GitHub(properties: Properties) {
+  const lastUpdate = format(new Date(properties.updatedAt), 'dd/MM/yy');
 
   return (
     <Item variant="outline" size="sm">

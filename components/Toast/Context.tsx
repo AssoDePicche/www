@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, createContext, PropsWithChildren, ReactNode, useContext, useState } from 'react';
+import { createContext, PropsWithChildren, useContext, useState } from 'react';
 
 export interface Toast {
   id: string;
@@ -43,7 +43,7 @@ const useProvideToast = (): ToastContextProperties => {
     };
 };
 
-export const ToastProvider: FC<PropsWithChildren> = ({ children }): ReactNode => {
+export const ToastProvider = ({ children }: PropsWithChildren) => {
     const toast = useProvideToast();
 
     return <ToastContext.Provider value={toast}>{children}</ToastContext.Provider>;

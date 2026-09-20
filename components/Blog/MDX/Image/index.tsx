@@ -2,7 +2,7 @@
 
 import NextImage from 'next/image';
 
-import { FC, ReactNode, useState } from 'react';
+import { useState } from 'react';
 
 import styled, { keyframes } from 'styled-components';
 
@@ -36,7 +36,7 @@ const Zoom = styled.div`
   width: 100%;
 `;
 
-export const Image: FC<Properties> = ({ alt, blurDataURL, height, src, width }): ReactNode => {
+export default function Image({ alt, blurDataURL, height, src, width }: Properties) {
   const [_, setLoaded] = useState(false);
 
   const numWidth: number = Number(width);
@@ -64,4 +64,4 @@ export const Image: FC<Properties> = ({ alt, blurDataURL, height, src, width }):
       </Zoom> 
     </Container>
   );
-};
+}
