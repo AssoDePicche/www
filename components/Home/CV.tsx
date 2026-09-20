@@ -1,53 +1,25 @@
-import { MdDownload as DownloadIcon } from 'react-icons/md';
+import { MdOutlineArrowOutward as ArrowIcon } from "react-icons/md";
 
 import styled from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
 
-const Button = styled.a`
-  align-items: center;
-  border: 0.4rem solid ${Theme.colors.accent};
-  color: ${Theme.colors.font};
-  display: flex;
-  font-size: 1.4rem;
-  font-weight: bold;
-  height: 4.8rem;
-  justify-content: center;
-  margin: ${Theme.spacing.small} 0;
-  text-decoration: none;
-  transition: all 200ms ease-in-out;
-  width: 20rem;
+import Button from '@components/common/Button';
 
-  &:hover {
-    background-color: rgba(255, 255, 255, .04);
-    border-color: rgba(255, 255, 255, .145);
-    cursor: pointer;
-  }
-
-  @media(max-width: ${Theme.breakpoints.sm}) {
-    font-size: 1.8rem;
-    height: 6.4rem;
-    margin: 0 auto;
-    width: 32rem;
-  }
+const Container = styled.a`
+    display: block;
+    margin-top: ${Theme.spacing.small};
 `;
 
-const CV = () => {
-    const prefix: string = process.env.NODE_ENV.toLowerCase() === 'production' ? '/www' : '';
-
-    const proxy: string = prefix + '/docs/CV.pdf';
+export default function CV() {
+    const proxy: string = 'https://docs.google.com/document/d/1CV8AYbsNaw6A7vdL_rtnj0StVZLF79TSq40HdsAdxO0/edit?usp=sharing';
 
     return (
-        <Button
-            download="Samuel do Prado Rodrigues (CV)"
-            href={proxy}
-            rel="noreferrer"
-            target="_blank"
-        >
-            <span>Currículo</span>
-            <DownloadIcon />
-        </Button>
+        <Container href={proxy} rel="noreferrer" target="_blank">
+            <Button>    
+                <span>Currículo</span>
+                <ArrowIcon />
+            </Button>    
+        </Container>
     );
-};
-
-export default CV;
+}
