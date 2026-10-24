@@ -10,7 +10,7 @@ import { Research } from '@components/Home/Research';
 
 export default function Page() {
     return (
-        <div>
+        <>
             <Profile />
 
             <CV />
@@ -20,6 +20,6 @@ export default function Page() {
             <Linktree />
 
             <Contact />
-        </div>
+        </>
     );
 }
