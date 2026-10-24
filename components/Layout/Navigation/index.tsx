@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-
 import { usePathname } from 'next/navigation';
 
 import { useState } from 'react';
@@ -13,6 +11,8 @@ import { MdClose as Close } from 'react-icons/md';
 import styled from 'styled-components';
 
 import { Theme } from '@components/Layout/Theme';
+
+import { Link } from '@components/Typography';
 
 function useSidebar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -29,7 +29,7 @@ function useSidebar() {
 function Item({ href, isActive, name }: { href: string, isActive: boolean, name: string }) {
     return (
         <StyledItem $isActive={isActive}>
-            <StyledLink href={href}>{name}</StyledLink>
+            <Link href={href}>{name}</Link>
         </StyledItem>
     );
 }
@@ -48,7 +48,7 @@ export default function Sidebar() {
                 {isOpen ? <Close /> : <Open />}
             </Trigger>
 
-            <Logo href="/">www.</Logo>
+            <Logo>WWW.</Logo>
 
             <List $isOpen={isOpen}>
                 {items.map(([href, name]: [string, string], key: number) => (
@@ -62,7 +62,7 @@ export default function Sidebar() {
 const Container = styled.div`
     align-items: center;
     display: flex;
-    height: 4rem;
+    height: 6.4rem;
     justify-content: space-between;
     max-width: 86rem;
     position: relative;
@@ -73,7 +73,7 @@ const Container = styled.div`
     }
 `;
 
-const Logo = styled(Link)`
+const Logo = styled.span`
     color: ${Theme.colors.accent};
     font-size: ${Theme.typography.size.small};
     font-weight: bold;
@@ -130,6 +130,7 @@ const List = styled.ul<{ $isOpen: boolean }>`
 `;
 
 const StyledItem = styled.li<{ $isActive: boolean }>`
+    color: ${(props) => props.$isActive ? Theme.colors.text : Theme.colors.accent};
     font-size: 20px;
     font-weight: ${(props) => props.$isActive ? 'bold' : 'normal'};
     line-height: 1.5;
@@ -138,14 +139,5 @@ const StyledItem = styled.li<{ $isActive: boolean }>`
 
     @media (min-width: 768px) {
         font-size: 16px;
-    }
-`;
-
-const StyledLink = styled.a`
-    color: white;
-    text-decoration: none;
-
-    @media (min-width: 768px) {
-        color: inherit; 
     }
 `;

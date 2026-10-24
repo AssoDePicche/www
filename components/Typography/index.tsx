@@ -1,10 +1,6 @@
-import { styled } from 'styled-components';
-
-import NextLink from 'next/link';
-
 import { PropsWithChildren } from 'react';
 
-import { Theme } from '@components/Layout/Theme';
+import { styled } from 'styled-components';
 
 export const ListItem = styled.li`
   font-size: 2rem;
@@ -35,27 +31,20 @@ export const Title = styled.h1`
   line-height: 2.5;
 `;
 
-type  Properties = PropsWithChildren<{
-  href: string;
-}>;
-
-const Wrapper = styled.span`
-  color: ${Theme.colors.font};
-  font-weight: bold;
+const Wrapper = styled.a`
+    color: inherit;
+    font-weight: bold;
+    text-decorat: none;
 `;
 
-export const Link = ({ children, href }: Properties) => {
-  if (href.startsWith('http')) {
-    return (
-      <NextLink href={href} rel="noopener noreferrer" target="_blank">
-        <Wrapper>{ children }</Wrapper>
-      </NextLink>
-    );
-  }
+export function Link({ children, href }: PropsWithChildren<{ href: string }>) {
+    const prefix = href.toLocaleLowerCase().includes('assodepicche.github.io') ? '/www' : '';
 
-  return (
-    <NextLink href={href}>
-      <Wrapper>{ children }</Wrapper>
-    </NextLink>
-  );
+    const URL = prefix + href;
+
+    if (href.startsWith('http')) {
+        return <Wrapper href={URL} rel="noopener noreferrer" target="_blank">{children}</Wrapper>;
+    }
+
+    return <Wrapper href={URL}>{children}</Wrapper>;
 }
