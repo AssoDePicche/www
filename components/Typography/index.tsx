@@ -38,7 +38,7 @@ const Wrapper = styled.a`
 `;
 
 export function Link({ children, href }: PropsWithChildren<{ href: string }>) {
-    const prefix = href.toLocaleLowerCase().includes('assodepicche.github.io') ? '/www' : '';
+    const prefix = process.env.NODE_ENV === 'production' ? '/www' : '';
 
     const URL = prefix + href;
 
